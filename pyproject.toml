@@ -1,0 +1,36 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "brain-tumor-classifier"
+version = "1.0.0"
+authors = [
+  { name="Srushti Velhal", email="srushtivelhal2006@gmail.com" },
+]
+description = "Clinical Brain Tumor Classification & Explainable AI (Grad-CAM) Framework"
+readme = "README.md"
+requires-python = ">=3.9"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+    "Topic :: Scientific/Engineering :: Medical Science Apps.",
+]
+dependencies = [
+    "tensorflow>=2.11.0",
+    "numpy>=1.22.0",
+    "pillow>=9.0.0",
+    "matplotlib>=3.5.0",
+    "h5py>=3.8.0",
+    "flask>=2.3.0",
+]
+
+[project.optional-dependencies]
+ui = ["gradio>=4.26.0"]
+cv = ["opencv-python-headless>=4.7.0"]
+dev = ["pytest>=7.3.0", "scikit-learn>=1.2.0", "seaborn>=0.12.0"]
+
+[project.scripts]
+neuroscan-cli = "cli:main"
